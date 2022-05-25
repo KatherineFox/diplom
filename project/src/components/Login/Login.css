@@ -1,0 +1,36 @@
+.login {
+  margin-top: 30px;
+  height: 400px;
+  border: 1px solid darkslateblue;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px rgb(124, 110, 202), 1px 1px 3px rgb(124, 110, 202),
+    3px 3px 8px rgb(39, 39, 135);
+  margin-bottom: 50px;
+}
+.formContent {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+.formInput {
+  margin: 10px 60px;
+  padding: 25px 10px;
+  font-size: 20px;
+  color: darkslateblue;
+  border: 1px solid darkslateblue;
+  border-radius: 6px;
+}
+.formInput:focus {
+  box-shadow: 1px 1px 2px rgb(124, 110, 202), 1px 1px 3px rgb(124, 110, 202),
+    3px 3px 8px rgb(39, 39, 135);
+  outline: none;
+}
+.loginButton {
+  margin: 10px 60px;
+  padding: 25px 10px;
+}
+.createAccountText {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}

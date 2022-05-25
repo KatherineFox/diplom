@@ -1,0 +1,33 @@
+.mainBlock {
+  height: 600px;
+  background-image: url("./mainBackground.jpg");
+  background-size: 100% 100%;
+}
+h1 {
+  color: white;
+  text-shadow: 0 0 10px rgb(124, 110, 202), 0 0 20px rgb(124, 110, 202),
+    0 0 30px rgb(39, 39, 135), 0 0 42px rgb(39, 39, 135),
+    0 0 82px rgb(39, 39, 135), 0 0 100px rgb(39, 39, 135),
+    0 0 120px rgb(39, 39, 135);
+  padding: 180px 0px 0px 100px;
+  font-size: 300px;
+  font-family: sans-serif;
+}
+.mainButton {
+  padding: 20px 40px;
+  margin-top: 50px;
+  margin-left: 110px;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.mainButton:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
+  border: 1px solid blue;
+  box-shadow: 0 0 10px rgb(124, 110, 202), 0 0 20px rgb(124, 110, 202),
+    0 0 30px rgb(39, 39, 135);
+}

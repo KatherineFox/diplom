@@ -1,0 +1,53 @@
+.ordersBlock {
+  margin-top: 60px;
+}
+
+.noOrders {
+  font-size: 25px;
+  padding: 30px 0;
+  background-color: lightblue;
+  color: darkslateblue;
+  font-weight: 500;
+}
+
+.shoppingLink {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+.startButton {
+  display: flex;
+  padding: 20px 40px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  background-color: transparent;
+  color: darkslateblue;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.startButton:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
+  border: 1px solid blue;
+  box-shadow: 0 0 10px rgb(124, 110, 202), 0 0 20px rgb(124, 110, 202),
+    0 0 30px rgb(39, 39, 135);
+}
+.ordersTable {
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+th {
+  font-size: 20px;
+}
+td {
+  border: none;
+  border-bottom-style: hidden;
+  font-size: 20px;
+}

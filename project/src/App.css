@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.nav {
+  top: 0;
+  height: 95px;
+  background-color: rgb(11, 18, 63);
+  position: sticky;
+  z-index: 3;
+}
+.navbar {
+  height: 100px;
+  width: 90%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+li {
+  text-shadow: 0 0 10px rgb(124, 110, 202), 0 0 20px rgb(124, 110, 202),
+    0 0 30px rgb(39, 39, 135), 0 0 42px rgb(39, 39, 135),
+    0 0 82px rgb(39, 39, 135), 0 0 100px rgb(39, 39, 135),
+    0 0 120px rgb(39, 39, 135);
+}
+
+.appLink {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropButton {
+  background-color: rgb(11, 18, 63);
+  border: rgb(11, 18, 63);
+  color: white;
+  padding: 16px 40px;
+  text-shadow: 0 0 10px rgb(124, 110, 202), 0 0 20px rgb(124, 110, 202),
+    0 0 30px rgb(39, 39, 135), 0 0 42px rgb(39, 39, 135),
+    0 0 82px rgb(39, 39, 135), 0 0 100px rgb(39, 39, 135),
+    0 0 120px rgb(39, 39, 135);
+}
+
+.dropContent {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  padding-top: 16px;
+  padding-right: 100px;
+  margin-right: 100px;
+}
+.linkAccount {
+  background-color: rgb(11, 18, 63);
+  padding: 10px 45px;
+}
+.linkAccount:hover {
+  background-color: darkslateblue;
+  color: white;
+}
+
+.dropdown:hover .dropContent {
+  display: block;
+}
+
+.footer {
+  height: 300px;
+  background-color: thistle;
+}

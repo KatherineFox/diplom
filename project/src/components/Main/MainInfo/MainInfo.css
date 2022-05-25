@@ -1,0 +1,35 @@
+.mainInfo {
+  height: 500px;
+  background-color: darkslateblue;
+  margin: 0;
+  z-index: 1;
+}
+.welcomeBlock {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  background-color: white;
+  width: 60%;
+  margin-left: 17%;
+  position: absolute;
+  margin-top: -50px;
+  z-index: 2;
+  padding: 10px 50px 50px 50px;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+.welcomeText {
+  text-align: justify;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: darkslateblue;
+  padding-top: 30px;
+  line-height: 1.8;
+}
+h2 {
+  padding-top: 20px;
+  color: white;
+  text-shadow: 0 0 10px rgb(124, 110, 202), 0 0 20px rgb(39, 39, 135),
+    0 0 30px rgb(39, 39, 135);
+}

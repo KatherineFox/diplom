@@ -11,30 +11,35 @@ import logo from "./Logo.png";
 import Footer from "./components/Footer/Footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import Categories from "./components/Categories/Categories";
-import Cable from "./components/Categories/Cable/Cable";
-import Computer from "./components/Categories/Computer/Computer";
-import Laptop from "./components/Categories/Laptop/Laptop";
-import Monitor from "./components/Categories/Monitor/Monitor";
-import Tablet from "./components/Categories/Tablet/Tablet";
-import Keyboard from "./components/Categories/Keyboard/Keyboard";
-import Mouse from "./components/Categories/Mouse/Mouse";
-import Headphones from "./components/Categories/Headphones/Headphones";
-import ScrollToTop from "./components/ScrollToTop";
 import Login from "./components/Login/Login";
-import Profile from "./components/Profile/Profile";
-import ProfileSettings from "./components/Profile/ProfileSettings/ProfileSettings";
-import Orders from "./components/Orders/Order";
+import Products from "./components/Products/Products";
+import CartPage from "./components/CartPage/CartPage";
+import Product from "./components/Product/Product";
+import Register from "./components/Register/Register";
+import { useDispatch, useSelector } from "react-redux";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { logout } from "./Redux/Actions/userActions";
+import ShippingPage from "./components/ShippingPage/ShippingPage";
+import PlaceorderPage from "./components/PlaceorderPage/PlaceorderPage";
+import ScrollToTop from "./components/ScrollToTop.js";
 
 function App(props) {
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
   return (
     <BrowserRouter>
       <div className="App">
         <div className="nav">
           <ul className="navbar">
-            <li>
+            <li className="logo">
               <NavLink to="/diplom">
-                <img src={logo} alt="logo"></img>
+                <img className="logotype" src={logo} alt="logo"></img>
               </NavLink>
             </li>
             <li>
@@ -43,52 +48,73 @@ function App(props) {
               </NavLink>
             </li>
             <li>
-              <NavLink className="appLink" to="categories">
-                CATEGORIES
+              <NavLink className="appLink" to="products">
+                PRODUCTS
               </NavLink>
             </li>
             <li>
-              <div className="dropdown">
-                <button className="dropButton">Hi, User</button>
-                <div className="dropContent">
-                  <NavLink className="appLink linkAccount" to="profilesettings">
-                    CHANGE PROFILE SETTINGS
-                  </NavLink>
-                  <NavLink className="appLink linkAccount" to="orders">
-                    CHECK MY ORDERS
-                  </NavLink>
-                  <NavLink className="appLink linkAccount" to="categories">
-                    LOGOUT
-                  </NavLink>
+              {userInfo ? (
+                <div className="dropdown">
+                  <button class="dropButton"> Hi, {userInfo.name}</button>
+                  <div class="dropContent">
+                    <NavLink className="linkAccount" to="/cart">
+                      MY CART
+                    </NavLink>
+                    <NavLink
+                      className="linkAccount"
+                      to="#"
+                      onClick={logoutHandler}
+                    >
+                      LOGOUT
+                    </NavLink>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <li>
+                  <div className="dropdown">
+                    <button class="dropButton">
+                      <FontAwesomeIcon icon={faUser} size="2x" color="white" />
+                    </button>
+                    <div class="dropContent">
+                      <NavLink className="linkAccount" to="/login">
+                        LOGIN
+                      </NavLink>
+                      <NavLink className="linkAccount" to="/register">
+                        REGISTER
+                      </NavLink>
+                    </div>
+                  </div>
+                </li>
+              )}
             </li>
+            {/*<li>
+              <form className="searchBlock">
+                <input
+                  type="search"
+                  className="form-control rounded search"
+                  placeholder="Search"
+                />{" "}
+                <button type="submit" className="search-button">
+                  search
+                </button>
+              </form>
+            </li>*/}
           </ul>
         </div>
         <ScrollToTop>
           <Routes>
             <Route path="/diplom" element={<Main />} />
-            <Route exact path="/categories/computers" element={<Computer />} />
-            <Route exact path="/categories/laptops" element={<Laptop />} />
-            <Route exact path="/categories/monitors" element={<Monitor />} />
-            <Route exact path="/categories/tablets" element={<Tablet />} />
-            <Route exact path="/categories/keyboards" element={<Keyboard />} />
-            <Route exact path="/categories/mouses" element={<Mouse />} />
-            <Route
-              exact
-              path="/categories/headphones"
-              element={<Headphones />}
-            />
-            <Route exact path="/categories/cables" element={<Cable />} />
-            <Route exact path="categories" element={<Categories />} />
-            <Route exact path="login" element={<Login />} />
-            <Route exact path="profile" element={<Profile />} />
-            <Route exact path="orders" element={<Orders />} />
-            <Route exact path="profilesettings" element={<ProfileSettings />} />
+            <Route exact path="products" element={<Products />} />
+            <Route exact path="/products/:id" element={<Product />} />
+            <Route path="/cart/:id" element={<CartPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route exact path="/login/shipping" element={<ShippingPage />} />
+            <Route exact path="/placeorder" element={<PlaceorderPage />} />
           </Routes>
         </ScrollToTop>
-
-        <div className="footer">
+        <div>
           <Footer />
         </div>
       </div>

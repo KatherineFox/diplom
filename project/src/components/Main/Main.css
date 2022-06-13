@@ -1,0 +1,76 @@
+.mainSection {
+  height: 1200px;
+  background-color: darkslateblue;
+}
+@media (max-width: 1000px) {
+  .mainSection {
+    height: 1600px;
+    background-color: darkslateblue;
+  }
+}
+@media (max-width: 864px) {
+  .mainSection {
+    height: 1650px;
+    background-color: darkslateblue;
+  }
+}
+@media (max-width: 794px) {
+  .mainSection {
+    height: 1700px;
+    background-color: darkslateblue;
+  }
+}
+@media (max-width: 652px) {
+  .mainSection {
+    height: 1750px;
+    background-color: darkslateblue;
+  }
+}
+@media (max-width: 593px) {
+  .mainSection {
+    height: 1800px;
+    background-color: darkslateblue;
+  }
+}
+@media (max-width: 505px) {
+  .mainSection {
+    height: 1850px;
+    background-color: darkslateblue;
+  }
+}
+@media (max-width: 486px) {
+  .mainSection {
+    height: 1900px;
+    background-color: darkslateblue;
+  }
+}
+@media (max-width: 448px) {
+  .mainSection {
+    height: 1950px;
+    background-color: darkslateblue;
+  }
+}
+@media (max-width: 409px) {
+  .mainSection {
+    height: 2100px;
+    background-color: darkslateblue;
+  }
+}
+@media (max-width: 409px) {
+  .mainSection {
+    height: 2100px;
+    background-color: darkslateblue;
+  }
+}
+@media (max-width: 355px) {
+  .mainSection {
+    height: 2200px;
+    background-color: darkslateblue;
+  }
+}
+@media (max-width: 335px) {
+  .mainSection {
+    height: 2450px;
+    background-color: darkslateblue;
+  }
+}

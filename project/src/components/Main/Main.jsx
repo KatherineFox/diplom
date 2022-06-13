@@ -5,7 +5,7 @@ import MainInfo from "./MainInfo/MainInfo";
 
 const Main = (props) => {
   return (
-    <div>
+    <div className="mainSection">
       <MainBlock />
       <MainInfo />
     </div>

@@ -6,7 +6,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="footer">
       <div className="contactBlocks">
         <h3>Contact Us</h3>
         <div className="contacts">
@@ -22,10 +22,10 @@ const Footer = () => {
             />
             <span className="contactText">contact@technogalaxy.com</span>
           </div>
+        </div>{" "}
+        <div className="footerRights">
+          @ 2022 TechnoGalaxy . All rights reserved.
         </div>
-      </div>
-      <div className="footerRights">
-        @ 2022 TechnoGalaxy . All rights reserved.
       </div>
     </div>
   );

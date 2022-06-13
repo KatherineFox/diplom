@@ -1,0 +1,39 @@
+.productImage {
+  margin-left: 10%;
+  margin-top: 30px;
+}
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  margin-left: 40px;
+}
+.productBlock {
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
+.pinBlock {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+  height: 150px;
+}
+@media (max-width: 720px) {
+  .productBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 100px;
+  }
+  .pinBlock {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .removepinButton {
+  }
+}

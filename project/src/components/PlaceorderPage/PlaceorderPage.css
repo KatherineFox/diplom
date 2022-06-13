@@ -1,0 +1,33 @@
+.orderItemInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0 20px 50px;
+  margin-right: 100px;
+}
+.orderTableInfo {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 100px 20px 0;
+}
+td {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+.orderButtonBlock {
+  display: flex;
+  justify-content: flex-end;
+  margin: 40px 100px 20px 0;
+}
+.placeOrderButton {
+  padding: 20px 40px;
+}
+@media (max-width: 710px) {
+  .orderItemInfo {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 100%;
+  }
+}

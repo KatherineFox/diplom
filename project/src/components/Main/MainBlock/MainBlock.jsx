@@ -6,7 +6,7 @@ const MainBlock = () => {
   return (
     <div className="mainBlock">
       <h1>Solve your IT-needs today!</h1>
-      <NavLink to="/categories">
+      <NavLink to="/products">
         <button className="mainButton">Start shopping</button>
       </NavLink>
     </div>

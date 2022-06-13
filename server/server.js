@@ -1,49 +1,37 @@
 import express from "express";
-import CableProducts from "./data/CableProducts.js";
-import ComputerProducts from "./data/ComputerProducts.js";
-import HeadphonesProducts from "./data/HeadphonesProducts.js";
-import KeyboardProducts from "./data/KeyboardProducts.js";
-import LaptopProducts from "./data/LaptopProducts.js";
-import MonitorProducts from "./data/MonitorProducts.js";
-import MouseProducts from "./data/MouseProducts.js";
-import TabletProducts from "./data/TabletProducts.js";
+import dotenv from "dotenv";
+import connectDatabase from "./config/MongoDb.js";
+import ImportData from "./DataImport.js";
+import productRoute from "./Routes/ProductRoutes.js";
+import { errorHandler, notFound } from "./Middleware/Errors.js";
+import products from "./data/Products.js";
+import userRouter from "./Routes/UserRoutes.js";
+import orderRouter from "./Routes/OrderRoutes.js";
 
+dotenv.config();
+connectDatabase();
 const app = express();
+app.use(express.json());
 
-app.get("/diplom/api/cable_products", (req, res) => {
-  res.json(CableProducts);
+//API
+app.use("/api/import", ImportData);
+app.use("/api/products", productRoute);
+app.use("/api/users", userRouter);
+app.use("/api/orders", orderRouter);
+
+//LOAD PRODUCTS FROM SERVER
+app.get("/api/products", (req, res) => {
+  res.json(products);
 });
 
-app.get("/dipom/api/computer_products", (req, res) => {
-  res.json(ComputerProducts);
+//LOAD PRODUCT FROM SERVER
+app.get("/api/products/:id", (req, res) => {
+  const product = products.find((p) => p._id === req.params.id);
+  res.json(product);
 });
 
-app.get("/diplom/api/headphones_products", (req, res) => {
-  res.json(HeadphonesProducts);
-});
-
-app.get("/diplom/api/keyboard_products", (req, res) => {
-  res.json(KeyboardProducts);
-});
-
-app.get("/diplom/api/laptop_products", (req, res) => {
-  res.json(LaptopProducts);
-});
-
-app.get("/diplom/api/monitor_products", (req, res) => {
-  res.json(MonitorProducts);
-});
-
-app.get("/diplom/api/mouse_products", (req, res) => {
-  res.json(MouseProducts);
-});
-
-app.get("/diplom/api/tablet_products", (req, res) => {
-  res.json(TabletProducts);
-});
-
-app.get("/", (req, res) => {
-  res.send("API is Running....");
-});
+//ERROR HANDLER
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(5000, console.log("server running..."));

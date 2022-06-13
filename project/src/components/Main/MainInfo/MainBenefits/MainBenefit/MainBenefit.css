@@ -27,3 +27,8 @@
   line-height: 1.8;
   text-shadow: 0 0 7px darkslateblue;
 }
+@media (max-width: 1000px) {
+  .benefitBlock {
+    margin-top: 30px;
+  }
+}

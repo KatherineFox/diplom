@@ -30,3 +30,43 @@ h3 {
   margin-top: 70px;
   font-weight: 500;
 }
+.footer {
+  height: 300px;
+  background-color: thistle;
+}
+@media (max-width: 654px) {
+  .footer {
+    height: 400px;
+  }
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  .footerRights {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+@media (max-width: 498px) {
+  .footer {
+    height: 500px;
+  }
+}
+@media (max-width: 405px) {
+  .footer {
+    height: 600px;
+  }
+  .contactBlock {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .contactText {
+    margin-top: 10px;
+    margin-right: 60px;
+  }
+}
+@media (max-width: 1000px) {
+  .contactBlocks {
+  }
+}
